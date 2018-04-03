@@ -1,14 +1,28 @@
+<!-- Anthony Krivonos -->
+<!-- April 2nd, 2018 -->
+
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+      <ion-navbar color="primary">
+            <ion-title>
+                  FaceRec
+            </ion-title>
+      </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+      <div class="photo" [ngStyle]="{'background': 'url(' + image + ')'}">
+            {{ image ? "" : "No Photo Taken"}}
+      </div>
+      <button ion-button full (tap)="analyzeFace()"><ion-icon name="camera"></ion-icon>Take Photo</button>
+      <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+      <div *ngIf="error" class="error">
+            {{ error }}
+      </div>
+      <div *ngIf="!loading && analysis?.length > 0" class="analysis">
+            <h1>Analysis</h1>
+            <div *ngFor="let an of analysis" class="subanalysis">
+                  <h2>{{an?.feature}}</h2>
+                  <p>{{an?.value}}</p>
+            </div>
+      </div>
 </ion-content>

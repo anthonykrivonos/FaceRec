@@ -1,3 +1,73 @@
-page-home {
+/* Anthony Krivonos */
+/* April 2nd, 2018 */
 
+page-home {
+      ion-content {
+            $margin-from-button: 20pt !important;
+            .photo {
+                  width: 100vw;
+                  height: 100vw;
+                  background-position: center;
+                  background-clip: border-box;
+                  background-size: contain !important;
+                  text-align: center;
+                  font-size: 30pt;
+                  padding: auto;
+                  line-height: 100vw;
+                  color: gray;
+            }
+            button {
+                  margin: 0 !important;
+                  height: 36pt !important;
+                  font-size: 16pt !important;
+                  ion-icon {
+                        margin-right: 8pt;
+                  }
+            }
+            ion-spinner {
+                  margin: auto !important;
+                  width: 100vw;
+                  margin-top: $margin-from-button;
+                  height: 40pt;
+            }
+            .error {
+                  color: red;
+                  text-align: center;
+                  font-size: 16pt;
+                  width: 70vw;
+                  margin-left: 15vw;
+                  margin-top: $margin-from-button;
+            }
+            .analysis {
+                  margin: auto;
+                  margin-top: $margin-from-button;
+                  margin-bottom: $margin-from-button;
+                  width: 60vw;
+                  h1 {
+                        font-weight: 600; // Make it bold
+                        text-align: center;
+                  }
+                  .subanalysis {
+                        width: 100%;
+                        h2 {
+                              margin: 0;
+                              float: left;
+                              font-size: 18pt;
+                              font-style: italic;
+                        }
+                        p {
+                              margin: 0;
+                              color: gray;
+                              float: right;
+                              padding-top: 3pt;
+                              font-size: 12pt;
+                        }
+                        &:before, &:after {
+                              content: "";
+                              display: table;
+                              clear: both;
+                        }
+                  }
+            }
+      }
 }

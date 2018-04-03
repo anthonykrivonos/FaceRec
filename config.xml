@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.AnthonyKrivonos.FaceRec" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>FaceRec</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <description>Facial recognition in Ionic? Count me in.</description>
+    <author email="info@anthonykrivonos.com" href="https://anthonykrivonos.com/">Anthony Krivonos</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -81,4 +81,18 @@
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.2" />
+    <allow-navigation href="http://192.168.0.12:8100" />
+    <allow-navigation href="http://169.254.85.5:8100" />
+    <engine name="ios" spec="4.5.4" />
+    <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+        <string>This app accesses your camera to take pictures.</string>
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
+        <string>This app may view pictures from your photo library.</string>
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryAddUsageDescription">
+        <string>This app may save pictures to your photo library.</string>
+    </edit-config>
+    <allow-navigation href="http://169.254.71.5:8100" />
 </widget>
